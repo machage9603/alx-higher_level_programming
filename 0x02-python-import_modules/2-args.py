@@ -1,19 +1,16 @@
 #!/usr/bin/python3
 
-import sys
-def arguments_out(argv):
-    n = len(argv) -1
-    if n == 0:
-        print('{} arguments.'.format(n))
-    elif n == 1:
-        print(' arguments:'.format(n))
+if __name__ == '__main__':
+    from sys import argv
+    numargs = len(argv) -1
+    if numargs == 0:
+        print('{} arguments.'.format(numargs))
+    elif numargs == 1:
+        print('{} arguments:'.format(numargs))
         print('1: {}'.format(arg[1]))
     else:
-        print('{} arguments:'.format(n))
+        print('{} arguments:'.format(numargs))
         i = 1
         for arg in argv[1:]:
             print('{}: {}'.format(i, arg))
             i += 1
-
-if __name__ == '__main__':
-    arguments_out(sys.argv)
