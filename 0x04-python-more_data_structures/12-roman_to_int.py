@@ -2,13 +2,25 @@
 
 
 def roman_to_int(roman_string):
-    if not  roman_string:
+    if not roman_string or not isinstance(roman_string, str):
         return 0
 
-    if not isinstance(roman_string, str):
-        return 0
+    rom_n = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    last_rom = 0
+    total = 0
 
-    roman_dict = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
-    return sum(roman_dict[c] * (1 if roman_dict[c] >= roman_dict.get(roman_string[i + 1], 0) else -1) for i, c in enumerate(roman_string))
+    for ch in reversed(roman_string):
+        if ch not in rom_n:
+            return 0  # Invalid Roman numeral
 
+        current_value = rom_n[ch]
+
+        if current_value < last_rom:
+            total -= current_value
+        else:
+            total += current_value
+
+        last_rom = current_value
+
+    return total
 
