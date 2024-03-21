@@ -1,4 +1,4 @@
-#!/usr/bin/python3 
+#!/usr/bin/python3
 
 
 def roman_to_int(roman_string):
@@ -23,4 +23,3 @@ def roman_to_int(roman_string):
         last_rom = current_value
 
     return total
-
