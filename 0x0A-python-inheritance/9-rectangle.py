@@ -18,7 +18,7 @@ class Rectangle(BaseGeometry):
     def area(self):
         """returns area of a rectangle and overrides area() from superclass"""
         return self.__width * self.__height
-    
+
     def __str__(self):
         """Returns a human readable string representation"""
         return str("[Rectangle] {}/{}".format(self.__width, self.__height))
