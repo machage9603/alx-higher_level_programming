@@ -19,12 +19,12 @@ Now use it:
 	<BLANKLINE>
 
 	>>> text_indentation("Mike")
-	Terry
+	Mike
 
 	>>> text_indentation(":Mike")
 	:
 	<BLANKLINE>
-	Terry
+	Mike
 
 	>>> text_indentation(":")
 	:
