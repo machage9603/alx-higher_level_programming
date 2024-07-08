@@ -1,21 +1,13 @@
 #!/usr/bin/node
 
 const process = require('process');
-const firstArg = process.argv[2];
-const num = parseInt(firstArg);
+const args = process.argv;
 
-function calcFactorial (x) {
-  if (isNaN(x)) {
-    return 1;
-  } else if (x === 0) {
-    return 1;
-  } else {
-    return x * calcFactorial(x - 1);
-  }
-}
-
-if (!isNaN(num)) {
-  console.log(calcFactorial(num));
+if (isNaN(args[2]) || isNaN(args[3])) {
+  console.log('0');
 } else {
-  console.log('1');
+  const array = args.map(Number);
+  array.slice(2, args.length);
+  array.sort((a, b) => a - b);
+  console.log(array[array.length - 2]);
 }
