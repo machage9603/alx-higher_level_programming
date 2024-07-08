@@ -1,12 +1,12 @@
 #!/usr/bin/node
 
-//import 'process'
+// import 'process'
 const process = require('process');
 
-//retrieve second argument
+// retrieve second argument
 const x = process.argv[2];
 
-//check if x is a number
+// check if x is a number
 const size = parseInt(x);
 
 if (!isNaN(size)) {
