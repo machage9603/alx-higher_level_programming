@@ -1,16 +1,19 @@
 #!/usr/bin/python3
-"""Handles HTML errors when using requests"""
+"""using requests module to fetch"""
 
-
-import requests
 import sys
+import requests
 
 
-if "__name__" == "__main__":
-    """Ensures that the code is not executed when imported"""
+if __name__ == "__main__":
+    # get the URL from the command line
     url = sys.argv[1]
-    body = requests.get(url)
-    if body.status_code <= 400:
-        print(body.text)
+
+    # Send a GET request to the specified URL
+    response = requests.get(url)
+
+    # Check if HTTP status code error
+    if response.status_code >= 400:
+        print("Error code: {}".format(response.status_code))
     else:
-        print("Error code:", body.status_code)
+        print(response.text)
