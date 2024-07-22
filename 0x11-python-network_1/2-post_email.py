@@ -1,5 +1,13 @@
 #!/usr/bin/python3
-"""Sends a  POST request to a URL with email as a parameter"""
+""
+send  a POST request to the passed URL with the email as a parameter
+
+Usage: ./2-post_email.py <URL> <email>
+    - URL: the URL to send the request to
+    - email: the email to send in the POST
+
+    - displays the body of the response
+"""
 
 from urllib.request import Request, urlopen
 from urllib.parse import urlencode
